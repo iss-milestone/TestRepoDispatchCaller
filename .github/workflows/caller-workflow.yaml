@@ -5,7 +5,9 @@ on:
     branches:
       - '*'
       
-run-name: ${{ github.actor }} is testing out GitHub Actions  🚀
+run-name: ${{ github.actor }} is testing out GitHub Actions
+env:
+  GH_TOKEN: ${{ github.token }}
 
 jobs:
 
