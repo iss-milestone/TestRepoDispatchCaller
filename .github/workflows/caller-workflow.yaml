@@ -25,10 +25,10 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
 
-      - name: Workflow call
-        uses: iss-milestone/TestRepoDispatch/.github/workflows/reusable_workflow.yaml
-        with:
-          test-input: 'This is a test input'
+      # - name: Workflow call
+      #   uses: iss-milestone/TestRepoDispatch/.github/workflows/reusable_workflow.yaml@main
+      #   with:
+      #     test-input: 'This is a test input'
 
       - name: Workflow dispatch
         shell: bash
