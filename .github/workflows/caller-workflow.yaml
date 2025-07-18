@@ -10,8 +10,14 @@ env:
   GH_TOKEN: ${{ github.token }}
 
 jobs:
-
+    
   trigger:
+    permissions: # Needed to be able to create tag (when publishing new package)
+      contents: write
+      actions: write
+      checks: write
+      pull-requests: write
+      
     runs-on: ubuntu-latest
 
     steps:
