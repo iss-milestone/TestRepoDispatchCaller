@@ -11,15 +11,25 @@ env:
 
 jobs:
     
-  trigger:
+  workflow-call:
+    uses: iss-milestone/TestRepoDispatch/.github/workflows/reusable_workflow.yaml@main
+    with:
+      test-input: 'This is a test input'
     permissions: # Needed to be able to create tag (when publishing new package)
       contents: write
       actions: write
       checks: write
       pull-requests: write
-      
-    runs-on: ubuntu-latest
 
+
+  workflow-dispatch:
+    runs-on: ubuntu-latest
+    
+    permissions: # Needed to be able to create tag (when publishing new package)
+      contents: write
+      actions: write
+      checks: write
+      pull-requests: write
     steps:
 
       - name: Check out repository code
